@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superhero Hunter</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">Superhero Hunter</h1>
+
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./favourites.html">Favourites</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="home-page">
+      <section class="search-section">
+        <h2>Find Your Superhero</h2>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search superhero..."
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+
+        <p id="loading" class="hidden">Loading...</p>
+      </section>
+
+      <section class="results-section">
+        <div id="heroResults">
+          <p>Search superheroes to see results</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
