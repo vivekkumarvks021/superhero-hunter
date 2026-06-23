@@ -17,3 +17,14 @@ async function searchSuperheroes(query) {
     return null;
   }
 }
+
+async function getSuperheroById(heroId) {
+  try {
+    const response = await fetch(`${BASE_URL}/${heroId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching superhero details:", error);
+    return null;
+  }
+}

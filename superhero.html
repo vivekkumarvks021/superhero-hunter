@@ -4,33 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Superhero Details</title>
-
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <h1 class="logo">Superhero Hunter</h1>
-
-        <ul class="nav-links">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./favourites.html">Favourites</a></li>
-        </ul>
-      </nav>
+    <header class="page-header">
+      <h1>Superhero Details</h1>
+      <a href="./index.html" class="back-link">← Back to Home</a>
     </header>
 
-    <main class="superhero-page">
-      <section class="superhero-section">
-        <h2>Superhero Details</h2>
+    <main class="details-page-container">
+      <p id="detailsLoading" class="loading hidden">
+        Loading superhero details...
+      </p>
 
-        <p id="heroLoading" class="hidden">Loading superhero details...</p>
-
-        <div id="heroDetails">
-          <p>Superhero details will appear here.</p>
-        </div>
+      <section id="heroDetails" class="hero-details-container">
+        <!-- JS se details render hongi -->
       </section>
     </main>
 
+    <script src="./js/config.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/storage.js"></script>
     <script src="./js/superhero.js"></script>
   </body>
 </html>

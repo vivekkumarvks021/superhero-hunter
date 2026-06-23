@@ -33,7 +33,7 @@ function renderHeroes(data) {
   heroResults.innerHTML = heroes
     .map((hero) => {
       return `
-        <div class="hero-card" data-id="${hero.id}">
+        <div class="hero-card" data-id="${hero.id}" data-name="${hero.name}">
           <img
             src="./assets/images/placeholder.jpg"
             alt="${hero.name}"
@@ -61,12 +61,20 @@ function addFavouriteButtonEvents() {
       event.stopPropagation();
 
       const heroCard = button.closest(".hero-card");
-      const heroId = heroCard.dataset.id;
-      const heroName = heroCard.querySelector("h3").textContent;
 
-      console.log("Favourite button clicked");
-      console.log("Hero ID:", heroId);
-      console.log("Hero Name:", heroName);
+      const heroData = {
+        id: heroCard.dataset.id,
+        name: heroCard.dataset.name,
+        image: "./assets/images/placeholder.jpg",
+      };
+
+      const isAdded = addHeroToFavourites(heroData);
+
+      if (isAdded) {
+        alert(`${heroData.name} added to favourites!`);
+      } else {
+        alert(`${heroData.name} is already in favourites!`);
+      }
     });
   });
 }

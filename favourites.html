@@ -4,31 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Favourite Superheroes</title>
-
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <h1 class="logo">Superhero Hunter</h1>
-
-        <ul class="nav-links">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./favourites.html">Favourites</a></li>
-        </ul>
-      </nav>
+    <header class="page-header">
+      <h1>My Favourite Superheroes</h1>
+      <a href="./index.html" class="back-link">← Back to Home</a>
     </header>
 
-    <main class="favourites-page">
-      <section class="favourites-section">
-        <h2>My Favourite Superheroes</h2>
-
-        <p id="emptyMessage">No favourite superheroes added yet.</p>
-
-        <div id="favouritesContainer"></div>
+    <main class="favourites-page-container">
+      <section id="favouritesList" class="hero-results">
+        <!-- favourite heroes yahan render honge -->
       </section>
     </main>
 
+    <script src="./js/storage.js"></script>
     <script src="./js/favourites.js"></script>
   </body>
 </html>
