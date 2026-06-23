@@ -4,12 +4,12 @@ A vanilla JavaScript web application to search superheroes, view their details, 
 
 ## Live Demo
 
-Add your deployed link here:  
+Deployed link: https://superhero-hunter-by-vivek.netlify.app/
 [Live Project Link](#)
 
 ## GitHub Repository
 
-Add your GitHub repository link here:  
+GitHub repository link: https://github.com/vivekkumarvks021/superhero-hunter
 [GitHub Repo Link](#)
 
 ---

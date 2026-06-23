@@ -1,17 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic page setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title shown in browser tab -->
     <title>Superhero Hunter</title>
 
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- Header / top navigation -->
     <header>
       <nav class="navbar">
-        <h1 class="logo">Superhero Hunter</h1>
+        <!-- App logo / home link -->
+        <a href="./index.html" class="logo">Superhero Hunter</a>
 
+        <!-- Navigation links -->
         <ul class="nav-links">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./favourites.html">Favourites</a></li>
@@ -20,9 +27,11 @@
     </header>
 
     <main class="home-page">
+      <!-- Search section -->
       <section class="search-section">
         <h2>Find Your Superhero</h2>
 
+        <!-- Search input + search button -->
         <div class="search-box">
           <input
             type="text"
@@ -32,19 +41,30 @@
           <button id="searchBtn">Search</button>
         </div>
 
+        <!-- Loading text shown while API data is being fetched -->
         <p id="loading" class="hidden">Loading...</p>
       </section>
 
+      <!-- Search results section -->
       <section class="results-section">
-        <div id="heroResults">
+        <div id="heroResults" class="hero-results">
+          <!-- Initial message before user performs any search -->
           <p>Search superheroes to see results</p>
         </div>
       </section>
     </main>
 
+    <!-- JavaScript files -->
+    <!-- config.js -> stores API token and base URL -->
     <script src="./js/config.js"></script>
+
+    <!-- api.js -> contains functions to call superhero API -->
     <script src="./js/api.js"></script>
+
+    <!-- storage.js -> handles localStorage for favourites -->
     <script src="./js/storage.js"></script>
+
+    <!-- home.js -> handles search, rendering cards, and favourites on home page -->
     <script src="./js/home.js"></script>
   </body>
 </html>

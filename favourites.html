@@ -1,24 +1,37 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic page setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser tab title -->
     <title>My Favourite Superheroes</title>
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- Page header -->
     <header class="page-header">
       <h1>My Favourite Superheroes</h1>
+
+      <!-- Link to go back to home page -->
       <a href="./index.html" class="back-link">← Back to Home</a>
     </header>
 
     <main class="favourites-page-container">
+      <!-- Favourite superheroes list will be rendered here using JavaScript -->
       <section id="favouritesList" class="hero-results">
         <!-- favourite heroes yahan render honge -->
       </section>
     </main>
 
+    <!-- JavaScript files -->
+    <!-- storage.js -> handles localStorage logic for favourite heroes -->
     <script src="./js/storage.js"></script>
+
+    <!-- favourites.js -> renders favourite heroes and handles remove functionality -->
     <script src="./js/favourites.js"></script>
   </body>
 </html>

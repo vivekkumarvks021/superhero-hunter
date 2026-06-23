@@ -1,19 +1,24 @@
 const heroDetailsContainer = document.getElementById("heroDetails");
 const detailsLoading = document.getElementById("detailsLoading");
 
+// Show loading text while superhero details are being fetched
 function showDetailsLoading() {
   detailsLoading.classList.remove("hidden");
 }
 
+// Hide loading text after data is loaded
 function hideDetailsLoading() {
   detailsLoading.classList.add("hidden");
 }
 
+// Read superhero id from URL query params
+// Example: superhero.html?id=70  -> returns "70"
 function getHeroIdFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
 }
 
+// Render selected superhero details on the details page
 function renderHeroDetails(hero) {
   heroDetailsContainer.innerHTML = `
     <div class="details-card">
@@ -32,6 +37,7 @@ function renderHeroDetails(hero) {
         </div>
       </div>
 
+      <!-- Power related stats -->
       <div class="details-section">
         <h3>Powerstats</h3>
         <p><strong>Intelligence:</strong> ${hero.powerstats.intelligence}</p>
@@ -40,6 +46,7 @@ function renderHeroDetails(hero) {
         <p><strong>Power:</strong> ${hero.powerstats.power}</p>
       </div>
 
+      <!-- Physical appearance details -->
       <div class="details-section">
         <h3>Appearance</h3>
         <p><strong>Gender:</strong> ${hero.appearance.gender}</p>
@@ -48,6 +55,7 @@ function renderHeroDetails(hero) {
         <p><strong>Weight:</strong> ${hero.appearance.weight.join(" / ")}</p>
       </div>
 
+      <!-- Work and team / relationship related details -->
       <div class="details-section">
         <h3>Work & Connections</h3>
         <p><strong>Occupation:</strong> ${hero.work.occupation}</p>
@@ -57,9 +65,11 @@ function renderHeroDetails(hero) {
   `;
 }
 
+// Fetch hero details using hero id from URL and render them on page
 async function loadHeroDetails() {
   const heroId = getHeroIdFromURL();
 
+  // If no id is found in URL, show error message
   if (!heroId) {
     heroDetailsContainer.innerHTML = "<p>Superhero ID not found in URL.</p>";
     return;
@@ -71,6 +81,7 @@ async function loadHeroDetails() {
 
   hideDetailsLoading();
 
+  // If API response is invalid or hero is not found
   if (!heroData || heroData.response === "error") {
     heroDetailsContainer.innerHTML = "<p>Unable to load superhero details.</p>";
     return;
@@ -79,4 +90,5 @@ async function loadHeroDetails() {
   renderHeroDetails(heroData);
 }
 
+// Initial function call when page loads
 loadHeroDetails();
